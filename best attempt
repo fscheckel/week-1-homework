@@ -1,0 +1,89 @@
+Last login: Thu Jan 21 23:15:30 on ttys000
+(base) Franccescas-Air:~ franccescascheckel$ ipython
+Python 3.8.5 (default, Sep  4 2020, 02:22:02) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.19.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import numpy as np
+
+In [2]: data = np.loadpy('Downloads/collatz_skeleton.py')
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-2-11fefd2aaedd> in <module>
+----> 1 data = np.loadpy('Downloads/collatz_skeleton.py')
+
+/opt/anaconda3/lib/python3.8/site-packages/numpy/__init__.py in __getattr__(attr)
+    212                 return Tester
+    213             else:
+--> 214                 raise AttributeError("module {!r} has no attribute "
+    215                                      "{!r}".format(__name__, attr))
+    216 
+
+AttributeError: module 'numpy' has no attribute 'loadpy'
+
+In [3]: data = np.loadtxt('Downloads/collatz_skeleton.py')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-3-cf048cd3381c> in <module>
+----> 1 data = np.loadtxt('Downloads/collatz_skeleton.py')
+
+/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py in loadtxt(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows)
+   1137         # converting the data
+   1138         X = None
+-> 1139         for x in read_data(_loadtxt_chunksize):
+   1140             if X is None:
+   1141                 X = np.array(x, dtype)
+
+/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py in read_data(chunk_size)
+   1065 
+   1066             # Convert each value according to its column and store
+-> 1067             items = [conv(val) for (conv, val) in zip(converters, vals)]
+   1068 
+   1069             # Then pack it according to the dtype's nesting
+
+/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py in <listcomp>(.0)
+   1065 
+   1066             # Convert each value according to its column and store
+-> 1067             items = [conv(val) for (conv, val) in zip(converters, vals)]
+   1068 
+   1069             # Then pack it according to the dtype's nesting
+
+/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py in floatconv(x)
+    761         if '0x' in x:
+    762             return float.fromhex(x)
+--> 763         return float(x)
+    764 
+    765     typ = dtype.type
+
+ValueError: could not convert string to float: 'import'
+
+In [4]: def length()
+  File "<ipython-input-4-cf0430b3581f>", line 1
+    def length()
+                ^
+SyntaxError: invalid syntax
+
+
+In [5]: def length(number)
+  File "<ipython-input-5-2bc4d440fcd4>", line 1
+    def length(number)
+                      ^
+SyntaxError: invalid syntax
+
+
+In [6]: def numbers = np.array(1,100000)
+  File "<ipython-input-6-652e0411eb05>", line 1
+    def numbers = np.array(1,100000)
+                ^
+SyntaxError: invalid syntax
+
+
+In [7]: homework1.py
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-7-0e67efc45e68> in <module>
+----> 1 homework1.py
+
+NameError: name 'homework1' is not defined
+
+In [8]: 
